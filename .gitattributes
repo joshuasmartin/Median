@@ -1,0 +1,2 @@
+# treats your Xcode project file as a binary
+*.pbxproj -crlf -diff -merge
