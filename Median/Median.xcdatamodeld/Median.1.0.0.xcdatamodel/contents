@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="11A511" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="File" representedClassName="File">
+        <attribute name="comments" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date"/>
+        <attribute name="date" optional="YES" attributeType="Date"/>
+        <attribute name="filename" attributeType="String"/>
+        <attribute name="filesize" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="lastVersionNumber" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="original_filename" attributeType="String"/>
+        <attribute name="title" attributeType="String" defaultValueString="New File"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="tags" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Tag" inverseName="files" inverseEntity="Tag" indexed="YES"/>
+        <relationship name="versions" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Version" inverseName="file" inverseEntity="Version" indexed="YES"/>
+    </entity>
+    <entity name="Section" representedClassName="NSManagedObject">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="children" optional="YES" transient="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="section" inverseEntity="Tag" indexed="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag">
+        <attribute name="title" attributeType="String" defaultValueString="Untitled Tag"/>
+        <relationship name="files" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="File" inverseName="tags" inverseEntity="File" indexed="YES"/>
+        <relationship name="section" optional="YES" transient="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Section" inverseName="children" inverseEntity="Section" indexed="YES"/>
+    </entity>
+    <entity name="Version" representedClassName="Version">
+        <attribute name="comments" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date"/>
+        <attribute name="filename" optional="YES" attributeType="String"/>
+        <attribute name="filesize" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <relationship name="file" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="File" inverseName="versions" inverseEntity="File" indexed="YES"/>
+    </entity>
+    <elements>
+        <element name="File" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="Section" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="Tag" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Version" positionX="0" positionY="0" width="128" height="135"/>
+    </elements>
+</model>
