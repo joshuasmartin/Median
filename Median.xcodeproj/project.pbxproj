@@ -16,6 +16,20 @@
 		2672A46C13ABCFFC0040B1F1 /* CDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2672A46B13ABCFFC0040B1F1 /* CDataController.m */; };
 		2676B8E813D86995009A94D7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2676B8E713D86995009A94D7 /* .gitignore */; };
 		2676B8EA13D86A63009A94D7 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 2676B8E913D86A63009A94D7 /* .gitattributes */; };
+		269A059113D8923F005DFA76 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058113D8923F005DFA76 /* ASIDataCompressor.m */; };
+		269A059213D8923F005DFA76 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058313D8923F005DFA76 /* ASIDataDecompressor.m */; };
+		269A059313D8923F005DFA76 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058513D8923F005DFA76 /* ASIDownloadCache.m */; };
+		269A059413D8923F005DFA76 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058713D8923F005DFA76 /* ASIFormDataRequest.m */; };
+		269A059513D8923F005DFA76 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058913D8923F005DFA76 /* ASIHTTPRequest.m */; };
+		269A059613D8923F005DFA76 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058D13D8923F005DFA76 /* ASIInputStream.m */; };
+		269A059713D8923F005DFA76 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058F13D8923F005DFA76 /* ASINetworkQueue.m */; };
+		269A059913D8933A005DFA76 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A059813D8933A005DFA76 /* SystemConfiguration.framework */; };
+		269A059B13D89354005DFA76 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A059A13D89354005DFA76 /* CoreServices.framework */; };
+		269A059D13D8936F005DFA76 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A059C13D8936F005DFA76 /* libz.1.2.5.dylib */; };
+		269A05A513D8B010005DFA76 /* MInfoBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A05A413D8B010005DFA76 /* MInfoBoxView.m */; };
+		269A05AA13D8B061005DFA76 /* NSBezierPath+MCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A05A713D8B061005DFA76 /* NSBezierPath+MCAdditions.m */; };
+		269A05AB13D8B061005DFA76 /* NSShadow+MCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A05A913D8B061005DFA76 /* NSShadow+MCAdditions.m */; };
+		269A05AE13D8B25D005DFA76 /* MInfoBoxToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A05AD13D8B25D005DFA76 /* MInfoBoxToolbarItem.m */; };
 		26A284E313AF94A3000E1940 /* CTagsValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A284E213AF94A3000E1940 /* CTagsValueTransformer.m */; };
 		26A284F713B04C50000E1940 /* CStringWithUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A284F613B04C50000E1940 /* CStringWithUUID.m */; };
 		26C35B3513B39A1400E250ED /* CTagsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C35B3413B39A1400E250ED /* CTagsTableView.m */; };
@@ -25,6 +39,8 @@
 		26DD346613A5369300C1489D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 26DD346413A5369300C1489D /* Credits.rtf */; };
 		26DD346913A5369300C1489D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD346813A5369300C1489D /* AppDelegate.m */; };
 		26DD346C13A5369300C1489D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26DD346A13A5369300C1489D /* MainMenu.xib */; };
+		26DF0F7D13D93B8B0095DDDC /* NSImage+QuickLook.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DF0F7C13D93B8B0095DDDC /* NSImage+QuickLook.m */; };
+		26DF0F7F13D93CC60095DDDC /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DF0F7E13D93CC60095DDDC /* QuickLook.framework */; };
 		26E30CA413C4FB5100268E91 /* MHumanReadableFileType.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E30CA313C4FB5100268E91 /* MHumanReadableFileType.m */; };
 		26EBE10713C636490043D10F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EBE10513C636490043D10F /* add.png */; };
 		26EBE10813C636490043D10F /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EBE10613C636490043D10F /* remove.png */; };
@@ -52,6 +68,36 @@
 		2672A46B13ABCFFC0040B1F1 /* CDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataController.m; sourceTree = "<group>"; };
 		2676B8E713D86995009A94D7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2676B8E913D86A63009A94D7 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		269A057D13D88CE1005DFA76 /* Median.1.1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Median.1.1.0.xcdatamodel; sourceTree = "<group>"; };
+		269A057F13D8923F005DFA76 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		269A058013D8923F005DFA76 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		269A058113D8923F005DFA76 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		269A058213D8923F005DFA76 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		269A058313D8923F005DFA76 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		269A058413D8923F005DFA76 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		269A058513D8923F005DFA76 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		269A058613D8923F005DFA76 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		269A058713D8923F005DFA76 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		269A058813D8923F005DFA76 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		269A058913D8923F005DFA76 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		269A058A13D8923F005DFA76 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		269A058B13D8923F005DFA76 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		269A058C13D8923F005DFA76 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		269A058D13D8923F005DFA76 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		269A058E13D8923F005DFA76 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		269A058F13D8923F005DFA76 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		269A059013D8923F005DFA76 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		269A059813D8933A005DFA76 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		269A059A13D89354005DFA76 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		269A059C13D8936F005DFA76 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		269A05A313D8B010005DFA76 /* MInfoBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MInfoBoxView.h; sourceTree = "<group>"; };
+		269A05A413D8B010005DFA76 /* MInfoBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MInfoBoxView.m; sourceTree = "<group>"; };
+		269A05A613D8B061005DFA76 /* NSBezierPath+MCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+MCAdditions.h"; sourceTree = "<group>"; };
+		269A05A713D8B061005DFA76 /* NSBezierPath+MCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+MCAdditions.m"; sourceTree = "<group>"; };
+		269A05A813D8B061005DFA76 /* NSShadow+MCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSShadow+MCAdditions.h"; sourceTree = "<group>"; };
+		269A05A913D8B061005DFA76 /* NSShadow+MCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSShadow+MCAdditions.m"; sourceTree = "<group>"; };
+		269A05AC13D8B25D005DFA76 /* MInfoBoxToolbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MInfoBoxToolbarItem.h; sourceTree = "<group>"; };
+		269A05AD13D8B25D005DFA76 /* MInfoBoxToolbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MInfoBoxToolbarItem.m; sourceTree = "<group>"; };
 		26A284E113AF94A3000E1940 /* CTagsValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTagsValueTransformer.h; sourceTree = "<group>"; };
 		26A284E213AF94A3000E1940 /* CTagsValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTagsValueTransformer.m; sourceTree = "<group>"; };
 		26A284F513B04C4F000E1940 /* CStringWithUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CStringWithUUID.h; sourceTree = "<group>"; };
@@ -71,6 +117,9 @@
 		26DD346713A5369300C1489D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26DD346813A5369300C1489D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		26DD346B13A5369300C1489D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		26DF0F7B13D93B8B0095DDDC /* NSImage+QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+QuickLook.h"; sourceTree = "<group>"; };
+		26DF0F7C13D93B8B0095DDDC /* NSImage+QuickLook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+QuickLook.m"; sourceTree = "<group>"; };
+		26DF0F7E13D93CC60095DDDC /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		26E30CA213C4FB5100268E91 /* MHumanReadableFileType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHumanReadableFileType.h; sourceTree = "<group>"; };
 		26E30CA313C4FB5100268E91 /* MHumanReadableFileType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHumanReadableFileType.m; sourceTree = "<group>"; };
 		26EBE10513C636490043D10F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
@@ -88,6 +137,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DF0F7F13D93CC60095DDDC /* QuickLook.framework in Frameworks */,
+				269A059D13D8936F005DFA76 /* libz.1.2.5.dylib in Frameworks */,
+				269A059B13D89354005DFA76 /* CoreServices.framework in Frameworks */,
+				269A059913D8933A005DFA76 /* SystemConfiguration.framework in Frameworks */,
 				26DD345613A5369300C1489D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +179,10 @@
 		26DD345713A5369300C1489D /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26DF0F7E13D93CC60095DDDC /* QuickLook.framework */,
+				269A059C13D8936F005DFA76 /* libz.1.2.5.dylib */,
+				269A059A13D89354005DFA76 /* CoreServices.framework */,
+				269A059813D8933A005DFA76 /* SystemConfiguration.framework */,
 				26DD345813A5369300C1489D /* AppKit.framework */,
 				26DD345913A5369300C1489D /* CoreData.framework */,
 				26DD345A13A5369300C1489D /* Foundation.framework */,
@@ -136,6 +193,30 @@
 		26DD345B13A5369300C1489D /* Median */ = {
 			isa = PBXGroup;
 			children = (
+				26DF0F7B13D93B8B0095DDDC /* NSImage+QuickLook.h */,
+				26DF0F7C13D93B8B0095DDDC /* NSImage+QuickLook.m */,
+				269A05A613D8B061005DFA76 /* NSBezierPath+MCAdditions.h */,
+				269A05A713D8B061005DFA76 /* NSBezierPath+MCAdditions.m */,
+				269A05A813D8B061005DFA76 /* NSShadow+MCAdditions.h */,
+				269A05A913D8B061005DFA76 /* NSShadow+MCAdditions.m */,
+				269A057F13D8923F005DFA76 /* ASICacheDelegate.h */,
+				269A058013D8923F005DFA76 /* ASIDataCompressor.h */,
+				269A058113D8923F005DFA76 /* ASIDataCompressor.m */,
+				269A058213D8923F005DFA76 /* ASIDataDecompressor.h */,
+				269A058313D8923F005DFA76 /* ASIDataDecompressor.m */,
+				269A058413D8923F005DFA76 /* ASIDownloadCache.h */,
+				269A058513D8923F005DFA76 /* ASIDownloadCache.m */,
+				269A058613D8923F005DFA76 /* ASIFormDataRequest.h */,
+				269A058713D8923F005DFA76 /* ASIFormDataRequest.m */,
+				269A058813D8923F005DFA76 /* ASIHTTPRequest.h */,
+				269A058913D8923F005DFA76 /* ASIHTTPRequest.m */,
+				269A058A13D8923F005DFA76 /* ASIHTTPRequestConfig.h */,
+				269A058B13D8923F005DFA76 /* ASIHTTPRequestDelegate.h */,
+				269A058C13D8923F005DFA76 /* ASIInputStream.h */,
+				269A058D13D8923F005DFA76 /* ASIInputStream.m */,
+				269A058E13D8923F005DFA76 /* ASINetworkQueue.h */,
+				269A058F13D8923F005DFA76 /* ASINetworkQueue.m */,
+				269A059013D8923F005DFA76 /* ASIProgressDelegate.h */,
 				26EBE10D13C6386B0043D10F /* save.png */,
 				26EBE10B13C637520043D10F /* open.png */,
 				26EBE10513C636490043D10F /* add.png */,
@@ -170,6 +251,10 @@
 				263F436B13C361F1008AFD8C /* CVersionsTableView.m */,
 				26E30CA213C4FB5100268E91 /* MHumanReadableFileType.h */,
 				26E30CA313C4FB5100268E91 /* MHumanReadableFileType.m */,
+				269A05A313D8B010005DFA76 /* MInfoBoxView.h */,
+				269A05A413D8B010005DFA76 /* MInfoBoxView.m */,
+				269A05AC13D8B25D005DFA76 /* MInfoBoxToolbarItem.h */,
+				269A05AD13D8B25D005DFA76 /* MInfoBoxToolbarItem.m */,
 			);
 			path = Median;
 			sourceTree = "<group>";
@@ -268,6 +353,18 @@
 				266C35FA13BE6D36008C885E /* Version.m in Sources */,
 				263F436C13C361F1008AFD8C /* CVersionsTableView.m in Sources */,
 				26E30CA413C4FB5100268E91 /* MHumanReadableFileType.m in Sources */,
+				269A059113D8923F005DFA76 /* ASIDataCompressor.m in Sources */,
+				269A059213D8923F005DFA76 /* ASIDataDecompressor.m in Sources */,
+				269A059313D8923F005DFA76 /* ASIDownloadCache.m in Sources */,
+				269A059413D8923F005DFA76 /* ASIFormDataRequest.m in Sources */,
+				269A059513D8923F005DFA76 /* ASIHTTPRequest.m in Sources */,
+				269A059613D8923F005DFA76 /* ASIInputStream.m in Sources */,
+				269A059713D8923F005DFA76 /* ASINetworkQueue.m in Sources */,
+				269A05A513D8B010005DFA76 /* MInfoBoxView.m in Sources */,
+				269A05AA13D8B061005DFA76 /* NSBezierPath+MCAdditions.m in Sources */,
+				269A05AB13D8B061005DFA76 /* NSShadow+MCAdditions.m in Sources */,
+				269A05AE13D8B25D005DFA76 /* MInfoBoxToolbarItem.m in Sources */,
+				26DF0F7D13D93B8B0095DDDC /* NSImage+QuickLook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,20 +401,20 @@
 		26DD347013A5369300C1489D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = "Median/Median-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "";
+				PRODUCT_NAME = Median;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -325,17 +422,18 @@
 		26DD347113A5369300C1489D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = "Median/Median-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "";
+				PRODUCT_NAME = Median;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -344,12 +442,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Median/Median-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Median/Median-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -363,12 +465,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Median/Median-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Median/Median-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -405,9 +510,10 @@
 		26F9FB1413BE1F1D007B6510 /* Median.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				269A057D13D88CE1005DFA76 /* Median.1.1.0.xcdatamodel */,
 				26F9FB1513BE1F1D007B6510 /* Median.1.0.0.xcdatamodel */,
 			);
-			currentVersion = 26F9FB1513BE1F1D007B6510 /* Median.1.0.0.xcdatamodel */;
+			currentVersion = 269A057D13D88CE1005DFA76 /* Median.1.1.0.xcdatamodel */;
 			path = Median.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
