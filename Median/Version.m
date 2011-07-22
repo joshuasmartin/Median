@@ -22,6 +22,7 @@
 - (NSString *)createdFormatted 
 {
     //NSString *formatString = [NSDateFormatter dateFormatFromTemplate:@"yyyy/MM/dd" options:0 locale:nil];
+    NSString *formatted;
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *cHistory = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[self valueForKey:@"created"]];
@@ -39,27 +40,30 @@
             if ([cHistory day] == [cToday day])
             {
                 [dateFormatter setDateFormat:@"HH:mm a"];
-                return [NSString stringWithFormat:@"Today %@", [dateFormatter stringFromDate:[self valueForKey:@"created"]]];
+                formatted = [NSString stringWithFormat:@"Today %@", [dateFormatter stringFromDate:[self valueForKey:@"created"]]];
             }
             else
             {
                 [dateFormatter setDateFormat:@"eee, MM-dd HH:mm a"];
-                return [dateFormatter stringFromDate:[self valueForKey:@"created"]];
+                formatted = [dateFormatter stringFromDate:[self valueForKey:@"created"]];
             }
         }
         // not current month
         else
         {
             [dateFormatter setDateFormat:@"MM-dd HH:mm a"];
-            return [dateFormatter stringFromDate:[self valueForKey:@"created"]];
+            formatted = [dateFormatter stringFromDate:[self valueForKey:@"created"]];
         }
     }
     // not current year
     else
     {
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm a"];
-        return [dateFormatter stringFromDate:[self valueForKey:@"created"]];
+        formatted = [dateFormatter stringFromDate:[self valueForKey:@"created"]];
     }
+    
+    [dateFormatter release];
+    return formatted;
 }
 
 @end
