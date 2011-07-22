@@ -52,5 +52,6 @@
 - (void)removeVersionsAfterAlert;
 
 - (IBAction)openWebsite:sender;
+- (NSString*)defaultProgressText;
 
 @end

@@ -83,7 +83,6 @@
     NSError *error;
     NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSManagedObject *untaggedTag;
     
     // fetch or create the "Untagged" tag so that if we delete a tag and its
     // files are not tagged anywhere else, the file can still exist
@@ -98,22 +97,18 @@
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
     // check if "Untagged" tag exists, if not, create it
-    if ([fetchedObjects count] != 0)
-    {
-        untaggedTag = [fetchedObjects lastObject];
-    }
-    else
+    if ([fetchedObjects count] == 0)
     {
         // "Untagged" tag not found, create it
-        untaggedTag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:context];
+        NSManagedObject *untaggedTag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:context];
         [untaggedTag setValue:@"Untagged" forKey:@"title"];
+        
+        // save our changes
+        if (![context save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
     }
     [fetchRequest release];
-    
-    // save our changes
-    if (![context save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
     
     // set the text of the Application Directory textfield
     [textAppDirectory setStringValue:[[self applicationFilesDirectory] path]];
@@ -122,8 +117,6 @@
 - (BOOL)applicationShouldHandleReopen:(NSApplication*)theApplication hasVisibleWindows:(BOOL)flag
 {
     [window makeKeyAndOrderFront:nil];
-    NSLog(@"clicked");
-    
     return true;
 }
 
@@ -416,10 +409,10 @@
 - (IBAction)addFilesAction:(id)sender
 {
     mPanel = [NSOpenPanel openPanel];
-    NSString *startingDir = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartingDirectory"];
+    NSURL *startingDir = [NSURL URLWithString:[[NSUserDefaults standardUserDefaults] objectForKey:@"StartingDirectory"]];
     if (!startingDir)
-        startingDir = NSHomeDirectory();
-    [mPanel setDirectory:startingDir];
+        startingDir = [NSURL URLWithString:NSHomeDirectory()];
+    [mPanel setDirectoryURL:startingDir];
     [mPanel setAllowsMultipleSelection:YES];
     [mPanel beginSheetModalForWindow:window completionHandler:^(NSInteger result) {
         
@@ -512,7 +505,7 @@
         NSString *dPath = [NSString stringWithFormat:@"%@%@", dDirectory, [[o mostRecentVersion] valueForKey:@"filename"]];
         [workspace openFile:dPath];
         
-        [progressIndicator stopAnimation:nil];
+//        [progressIndicator stopAnimation:nil];
     }
 }
 
@@ -540,10 +533,10 @@
 - (void)saveVersionAs:(Version*)version
 {
     NSSavePanel *sPanel = [NSSavePanel savePanel];
-    NSString *startingDir = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartingDirectory"];
+    NSURL *startingDir = [NSURL URLWithString:[[NSUserDefaults standardUserDefaults] objectForKey:@"StartingDirectory"]];
     if (!startingDir)
-        startingDir = NSHomeDirectory();
-    [sPanel setDirectory:startingDir];
+        startingDir = [NSURL URLWithString:NSHomeDirectory()];
+    [sPanel setDirectoryURL:startingDir];
     [sPanel setCanCreateDirectories:YES];
     [sPanel setNameFieldStringValue:[[version valueForKey:@"file"] valueForKey:@"filename"]];
     [sPanel beginSheetModalForWindow:window completionHandler:^(NSInteger result) {
@@ -565,10 +558,10 @@
 {
     File *file = [[filesController selectedObjects] lastObject];
     mPanel = [NSOpenPanel openPanel];
-    NSString *startingDir = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartingDirectory"];
+    NSURL *startingDir = [NSURL URLWithString:[[NSUserDefaults standardUserDefaults] objectForKey:@"StartingDirectory"]];
     if (!startingDir)
-        startingDir = NSHomeDirectory();
-    [mPanel setDirectory:startingDir];
+        startingDir = [NSURL URLWithString:NSHomeDirectory()];
+    [mPanel setDirectoryURL:startingDir];
     [mPanel setAllowsMultipleSelection:NO];
     [mPanel beginSheetModalForWindow:window completionHandler:^(NSInteger result) {
         
@@ -677,6 +670,11 @@
 {
     NSLog(@"clckd");
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.mediandocs.com/"]];
+}
+
+- (NSString*)defaultProgressText
+{
+    return @"Welcome to Median";
 }
 
 /**

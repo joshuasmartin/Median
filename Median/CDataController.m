@@ -13,18 +13,28 @@
 #import "Version.h"
 
 
+static NSProgressIndicator *progressIndicator;
+static NSTextField *progressText;
+static AppDelegate *appDelegate;
+static NSNumber *currentCopied;
+//static unsigned long long totalTransferCopied;
+
 @implementation CDataController
 
 - (void)awakeFromNib
 {
-    // Hook up the static progress indicator to our local one
-    // that is connected in IB. This will allows us to update
-    // the progress indicator in the callback.
     [currentCopied initWithUnsignedLongLong:(unsigned long long)0];
     
+    // hook up static progress indicator to our local one
+    // that is connected in IB. allows us to update
+    // the progress indicator in the callback
     progressIndicator = localProgressIndicator;
     [progressIndicator setUsesThreadedAnimation:YES];
     
+    // hook up static progress text
+    progressText = localProgressText;
+    
+    // hook up static app delegate
     appDelegate = localAppDelegate;
 }
 
@@ -57,8 +67,9 @@
                 Boolean isDir = true;
                 FSPathMakeRef( (const UInt8 *)[dDirectory fileSystemRepresentation], &destination, &isDir );
                 
-                // start the progress bar
+                // start the progress bar and set text
                 [progressIndicator startAnimation:nil];
+                [progressText setStringValue:[NSString stringWithFormat:@"Copying %@", [sourcePath lastPathComponent]]];
                 
                 // start the sync copy
                 OSStatus status = FSCopyObjectSync (&source,
@@ -128,11 +139,14 @@
                 
                 [versionsController rearrangeObjects];
                 
-                // stop the animation
+                // stop the animation and reset text
                 [progressIndicator stopAnimation:nil];
+                [progressText setStringValue:[appDelegate defaultProgressText]];
             }
             else
             {
+                [progressText setStringValue:@"Failed to Copy File"];
+                
                 NSAlert *alert = [[[NSAlert alloc] init] autorelease];
                 [alert addButtonWithTitle:@"OK"];
                 [alert setMessageText:@"Please provide files, not folders."];
@@ -146,15 +160,17 @@
 }
 
 - (BOOL)transferIndeterminate:(NSArray*)paths forFile:(File*)file
-{
-    [progressIndicator startAnimation:nil];
-    
+{   
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSString *dDirectory = [NSString stringWithFormat:@"%@%@", [[appDelegate dataDirectory] path], @"/"];
     
     for (NSString *sPath in paths)
     {
+        // start the progress bar and set text
+        [progressIndicator startAnimation:nil];
+        [progressText setStringValue:[NSString stringWithFormat:@"Copying %@", [sPath lastPathComponent]]];
+        
         NSString *dFilename = [NSString stringWithUUID];
         NSString *dPath = [NSString stringWithFormat:@"%@%@", dDirectory, dFilename];
         
@@ -200,20 +216,28 @@
             if (![context save:&error]) {
                 NSLog(@"Couldn't save object: %@", [error localizedDescription]);
             }
+            
+            [progressText setStringValue:[appDelegate defaultProgressText]];
         }
         else
         {
             NSLog(@"Couldn't copy file.");
+            [progressText setStringValue:@"Failed to Copy File"];
         }
+        
+        // stop the animation and reset text
+        [progressIndicator stopAnimation:nil];
     }
-    
-    [progressIndicator stopAnimation:nil];
     
     return true;
 }
 
 - (BOOL)performTransferFromPath:(NSString*)sourcePath destinationDirectory:(NSString*)destinationDirectory destinationFilename:(NSString*)destinationFilename
 {
+    // start the progress bar and set text
+    [progressIndicator startAnimation:nil];
+    [progressText setStringValue:[NSString stringWithFormat:@"Copying %@", [sourcePath lastPathComponent]]];
+    
     BOOL success = NO;
     NSFileManager *fileManager = [NSFileManager defaultManager];
 
@@ -241,12 +265,17 @@
         if (status)
         {
             NSLog(@"Failed to begin synchronous object move: %@", status);
+            [progressText setStringValue:@"Failed to Copy File"];
         }
         else
         {
             success = YES;
+            [progressText setStringValue:[appDelegate defaultProgressText]];
         }
     }
+    
+    // stop the animation and reset text
+    [progressIndicator stopAnimation:nil];
     
     return success;
 }
@@ -266,8 +295,9 @@
     Boolean isDir = true;
     FSPathMakeRef( (const UInt8 *)[toDirectory fileSystemRepresentation], &destination, &isDir );
     
-    // start the progress bar
+    // start the progress bar and set text
     [progressIndicator startAnimation:nil];
+    [progressText setStringValue:[NSString stringWithFormat:@"Copying %@", [sPath lastPathComponent]]];
     
     // start the sync move
     OSStatus status = FSCopyObjectSync (&source,
@@ -279,126 +309,128 @@
     if (status)
     {
         NSLog(@"Failed to begin synchronous object copy: %@", status);
+        [progressText setStringValue:@"Failed to Copy File"];
+        
         return NO;
     }
     else
     {
-        
+        [progressText setStringValue:[appDelegate defaultProgressText]];
     }
     
-    // stop the progress bar
+    // stop the animation and reset text
     [progressIndicator stopAnimation:nil];
     
     return YES;
 }
 
-- (void)transfer:(NSArray*)paths
-{
-    // Use the NSFileManager to obtain the size of our source file in bytes.
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    unsigned long long totalTransferSize = 0;
-    totalTransferCopied = 0; 
-    
-    for (NSString *sourcePath in paths)
-    {
-        NSDictionary *sourceAttributes = [fileManager attributesOfItemAtPath:sourcePath error:nil];
-        NSNumber *sourceFileSize;
-        
-        if ((sourceFileSize = [sourceAttributes objectForKey:NSFileSize]))
-        {
-            // add to total
-            totalTransferSize = totalTransferSize + [sourceFileSize unsignedLongLongValue];
-        }
-    }
-    
-    NSLog(@"before double %llu", totalTransferSize);
-    NSLog(@"after double %f", (double)totalTransferSize);
-    
-    // setup the progress bar
-    [progressIndicator setDoubleValue:0];
-    [progressIndicator setMaxValue:(double)totalTransferSize];
-    
-    for (NSString *sourcePath in paths)
-    {
-        NSLog(@"one path");
-        NSDictionary *sourceAttributes = [fileManager attributesOfItemAtPath:sourcePath error:nil];
-        NSNumber *sourceFileSize;
-        //NSString *destinationPath = [NSString stringWithFormat:@"%@%@", @"/tmp/", [sourcePath lastPathComponent]];
-        NSString *destinationPath = @"/tmp/";
-        
-        if (!(sourceFileSize = [sourceAttributes objectForKey:NSFileSize]))
-        {
-            // Couldn't get the file size so we need to bail.
-            NSLog(@"Unable to obtain size of file being copied.");
-            return;
-        }
-        
-        
-        // Get the current run loop and schedule our callback
-        CFRunLoopRef runLoop = CFRunLoopGetCurrent();
-        FSFileOperationRef fileOp = FSFileOperationCreate(kCFAllocatorDefault);
-        
-        OSStatus status = FSFileOperationScheduleWithRunLoop(fileOp, runLoop, kCFRunLoopDefaultMode);
-        if( status )
-        {
-            NSLog(@"Failed to schedule operation with run loop: %@", status);
-            return;
-        }
-        
-        // Create a filesystem ref structure for the source and destination and
-        // populate them with their respective paths from our NSTextFields.
-        FSRef source;
-        FSRef destination;
-        
-        FSPathMakeRef( (const UInt8 *)[sourcePath fileSystemRepresentation], &source, NULL );
-        
-        Boolean isDir = true;
-        FSPathMakeRef( (const UInt8 *)[destinationPath fileSystemRepresentation], &destination, &isDir );
-        
-        // Start the async copy.
-        status = FSCopyObjectAsync (fileOp,
-                                    &source,
-                                    &destination, // Full path to destination dir
-                                    NULL, // Use the same filename as source
-                                    kFSFileOperationDefaultOptions,
-                                    statusCallback,
-                                    1.0,
-                                    NULL);
-        
-        CFRelease(fileOp);
-        
-        if( status )
-        {
-            NSLog(@"Failed to begin asynchronous object copy: %@", status);
-        }
-    }
-}
+//- (void)transfer:(NSArray*)paths
+//{
+//    // Use the NSFileManager to obtain the size of our source file in bytes.
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    unsigned long long totalTransferSize = 0;
+//    totalTransferCopied = 0; 
+//    
+//    for (NSString *sourcePath in paths)
+//    {
+//        NSDictionary *sourceAttributes = [fileManager attributesOfItemAtPath:sourcePath error:nil];
+//        NSNumber *sourceFileSize;
+//        
+//        if ((sourceFileSize = [sourceAttributes objectForKey:NSFileSize]))
+//        {
+//            // add to total
+//            totalTransferSize = totalTransferSize + [sourceFileSize unsignedLongLongValue];
+//        }
+//    }
+//    
+//    NSLog(@"before double %llu", totalTransferSize);
+//    NSLog(@"after double %f", (double)totalTransferSize);
+//    
+//    // setup the progress bar
+//    [progressIndicator setDoubleValue:0];
+//    [progressIndicator setMaxValue:(double)totalTransferSize];
+//    
+//    for (NSString *sourcePath in paths)
+//    {
+//        NSLog(@"one path");
+//        NSDictionary *sourceAttributes = [fileManager attributesOfItemAtPath:sourcePath error:nil];
+//        NSNumber *sourceFileSize;
+//        //NSString *destinationPath = [NSString stringWithFormat:@"%@%@", @"/tmp/", [sourcePath lastPathComponent]];
+//        NSString *destinationPath = @"/tmp/";
+//        
+//        if (!(sourceFileSize = [sourceAttributes objectForKey:NSFileSize]))
+//        {
+//            // Couldn't get the file size so we need to bail.
+//            NSLog(@"Unable to obtain size of file being copied.");
+//            return;
+//        }
+//        
+//        
+//        // Get the current run loop and schedule our callback
+//        CFRunLoopRef runLoop = CFRunLoopGetCurrent();
+//        FSFileOperationRef fileOp = FSFileOperationCreate(kCFAllocatorDefault);
+//        
+//        OSStatus status = FSFileOperationScheduleWithRunLoop(fileOp, runLoop, kCFRunLoopDefaultMode);
+//        if( status )
+//        {
+//            NSLog(@"Failed to schedule operation with run loop: %@", status);
+//            return;
+//        }
+//        
+//        // Create a filesystem ref structure for the source and destination and
+//        // populate them with their respective paths from our NSTextFields.
+//        FSRef source;
+//        FSRef destination;
+//        
+//        FSPathMakeRef( (const UInt8 *)[sourcePath fileSystemRepresentation], &source, NULL );
+//        
+//        Boolean isDir = true;
+//        FSPathMakeRef( (const UInt8 *)[destinationPath fileSystemRepresentation], &destination, &isDir );
+//        
+//        // Start the async copy.
+//        status = FSCopyObjectAsync (fileOp,
+//                                    &source,
+//                                    &destination, // Full path to destination dir
+//                                    NULL, // Use the same filename as source
+//                                    kFSFileOperationDefaultOptions,
+//                                    statusCallback,
+//                                    1.0,
+//                                    NULL);
+//        
+//        CFRelease(fileOp);
+//        
+//        if( status )
+//        {
+//            NSLog(@"Failed to begin asynchronous object copy: %@", status);
+//        }
+//    }
+//}
 
-static void statusCallback (FSFileOperationRef fileOp,
-                            const FSRef *currentItem,
-                            FSFileOperationStage stage,
-                            OSStatus error,
-                            CFDictionaryRef statusDictionary,
-                            void *info )
-{
-    // If the status dictionary is valid, we can grab the current values
-    // to display status changes, or in our case to update the progress
-    // indicator.
-    if (statusDictionary)
-    {
-        CFNumberRef bytesCompleted;
-        
-        bytesCompleted = (CFNumberRef) CFDictionaryGetValue(statusDictionary, kFSOperationBytesCompleteKey);
-        
-        CGFloat floatBytesCompleted;
-        CFNumberGetValue (bytesCompleted, kCFNumberMaxType, &floatBytesCompleted);
-        
-        totalTransferCopied = (unsigned long long)floatBytesCompleted;
-        //currentCopied = [NSNumber numberWithUnsignedLongLong:(unsigned long long)floatBytesCompleted];
-        
-        NSLog(@"Copied %llu bytes so far.", totalTransferCopied);
-        [progressIndicator setDoubleValue:(double)totalTransferCopied];
-    }
-}
+//static void statusCallback (FSFileOperationRef fileOp,
+//                            const FSRef *currentItem,
+//                            FSFileOperationStage stage,
+//                            OSStatus error,
+//                            CFDictionaryRef statusDictionary,
+//                            void *info )
+//{
+//    // If the status dictionary is valid, we can grab the current values
+//    // to display status changes, or in our case to update the progress
+//    // indicator.
+//    if (statusDictionary)
+//    {
+//        CFNumberRef bytesCompleted;
+//        
+//        bytesCompleted = (CFNumberRef) CFDictionaryGetValue(statusDictionary, kFSOperationBytesCompleteKey);
+//        
+//        CGFloat floatBytesCompleted;
+//        CFNumberGetValue (bytesCompleted, kCFNumberMaxType, &floatBytesCompleted);
+//        
+//        totalTransferCopied = (unsigned long long)floatBytesCompleted;
+//        //currentCopied = [NSNumber numberWithUnsignedLongLong:(unsigned long long)floatBytesCompleted];
+//        
+//        NSLog(@"Copied %llu bytes so far.", totalTransferCopied);
+//        [progressIndicator setDoubleValue:(double)totalTransferCopied];
+//    }
+//}
 
 @end

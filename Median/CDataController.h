@@ -11,16 +11,11 @@
 #import "File.h"
 #import "Version.h"
 
-
-static NSProgressIndicator *progressIndicator;
-static AppDelegate *appDelegate;
-static NSNumber *currentCopied;
-static unsigned long long totalTransferCopied;
-
 @interface CDataController : NSObject {
 @private
     IBOutlet AppDelegate *localAppDelegate;
     IBOutlet NSProgressIndicator *localProgressIndicator;
+    IBOutlet NSTextField *localProgressText;
     IBOutlet NSArrayController *versionsController;
 }
 
@@ -29,14 +24,14 @@ static unsigned long long totalTransferCopied;
 - (BOOL)performTransferFromPath:(NSString*)sourcePath destinationDirectory:(NSString*)destinationDirectory destinationFilename:(NSString*)destinationFilename;
 - (BOOL)saveVersionIndeterminate:(Version*)version toDirectory:(NSString*)toDirectory withName:(NSString*)withName;
 
-- (void)transfer:(NSArray*)paths;
-
-static void statusCallback (FSFileOperationRef fileOp,
-                            const FSRef *currentItem,
-                            FSFileOperationStage stage,
-                            OSStatus error,
-                            CFDictionaryRef statusDictionary,
-                            void *info
-                            );
+//- (void)transfer:(NSArray*)paths;
+//
+//static void statusCallback (FSFileOperationRef fileOp,
+//                            const FSRef *currentItem,
+//                            FSFileOperationStage stage,
+//                            OSStatus error,
+//                            CFDictionaryRef statusDictionary,
+//                            void *info
+//                            );
 
 @end
