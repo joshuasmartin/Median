@@ -12,6 +12,10 @@
 #import "CStringWithUUID.h"
 #import "MHumanReadableFileType.h"
 #import "File.h"
+#import "ASICloudFilesRequest.h"
+#import "ASICloudFilesContainerRequest.h"
+#import "ASICloudFilesContainer.h"
+#import "ASICloudFilesObjectRequest.h"
 
 @implementation AppDelegate
 
@@ -112,6 +116,34 @@
     
     // set the text of the Application Directory textfield
     [textAppDirectory setStringValue:[[self applicationFilesDirectory] path]];
+    
+    /////////////////////////////////////////////////
+    
+    [ASICloudFilesRequest setUsername:@"endeavorcorp"];
+    [ASICloudFilesRequest setApiKey:@"f7c15c2452891fab8dadd7d8a9c77604"];
+    NSError *authError = [ASICloudFilesRequest authenticate];
+    
+    if (!authError)
+    {
+        NSLog(@"Authentication success!!");
+        
+        ASICloudFilesContainerRequest *listRequest = [ASICloudFilesContainerRequest listRequest];
+        [listRequest startSynchronous];
+        for (ASICloudFilesContainer *o in [listRequest containers])
+        {
+            NSLog(@"%@: Container name is: %@", [self class], [o name]);
+        }
+    }
+    else
+    {
+        NSLog(@"%@: Could not authenticate: %@", [self class], [authError localizedDescription]);
+        return;
+        
+//        ASICloudFilesObjectRequest *request = [ASICloudFilesObjectRequest getObjectRequestWithContainer:@"container-name" 
+//                                                       objectPath:@"/path/to/the/object"];
+//        [request startSynchronous];
+//        ASICloudFilesObject *object = [request object];
+    }
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication*)theApplication hasVisibleWindows:(BOOL)flag

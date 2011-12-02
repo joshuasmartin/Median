@@ -16,13 +16,6 @@
 		2672A46C13ABCFFC0040B1F1 /* CDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2672A46B13ABCFFC0040B1F1 /* CDataController.m */; };
 		2676B8E813D86995009A94D7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2676B8E713D86995009A94D7 /* .gitignore */; };
 		2676B8EA13D86A63009A94D7 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 2676B8E913D86A63009A94D7 /* .gitattributes */; };
-		269A059113D8923F005DFA76 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058113D8923F005DFA76 /* ASIDataCompressor.m */; };
-		269A059213D8923F005DFA76 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058313D8923F005DFA76 /* ASIDataDecompressor.m */; };
-		269A059313D8923F005DFA76 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058513D8923F005DFA76 /* ASIDownloadCache.m */; };
-		269A059413D8923F005DFA76 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058713D8923F005DFA76 /* ASIFormDataRequest.m */; };
-		269A059513D8923F005DFA76 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058913D8923F005DFA76 /* ASIHTTPRequest.m */; };
-		269A059613D8923F005DFA76 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058D13D8923F005DFA76 /* ASIInputStream.m */; };
-		269A059713D8923F005DFA76 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A058F13D8923F005DFA76 /* ASINetworkQueue.m */; };
 		269A059913D8933A005DFA76 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A059813D8933A005DFA76 /* SystemConfiguration.framework */; };
 		269A059B13D89354005DFA76 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A059A13D89354005DFA76 /* CoreServices.framework */; };
 		269A059D13D8936F005DFA76 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A059C13D8936F005DFA76 /* libz.1.2.5.dylib */; };
@@ -69,24 +62,6 @@
 		2676B8E713D86995009A94D7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2676B8E913D86A63009A94D7 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		269A057D13D88CE1005DFA76 /* Median.1.1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Median.1.1.0.xcdatamodel; sourceTree = "<group>"; };
-		269A057F13D8923F005DFA76 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
-		269A058013D8923F005DFA76 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
-		269A058113D8923F005DFA76 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
-		269A058213D8923F005DFA76 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
-		269A058313D8923F005DFA76 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
-		269A058413D8923F005DFA76 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
-		269A058513D8923F005DFA76 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
-		269A058613D8923F005DFA76 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
-		269A058713D8923F005DFA76 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
-		269A058813D8923F005DFA76 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
-		269A058913D8923F005DFA76 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
-		269A058A13D8923F005DFA76 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
-		269A058B13D8923F005DFA76 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
-		269A058C13D8923F005DFA76 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
-		269A058D13D8923F005DFA76 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
-		269A058E13D8923F005DFA76 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
-		269A058F13D8923F005DFA76 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
-		269A059013D8923F005DFA76 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
 		269A059813D8933A005DFA76 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		269A059A13D89354005DFA76 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		269A059C13D8936F005DFA76 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
@@ -199,24 +174,6 @@
 				269A05A713D8B061005DFA76 /* NSBezierPath+MCAdditions.m */,
 				269A05A813D8B061005DFA76 /* NSShadow+MCAdditions.h */,
 				269A05A913D8B061005DFA76 /* NSShadow+MCAdditions.m */,
-				269A057F13D8923F005DFA76 /* ASICacheDelegate.h */,
-				269A058013D8923F005DFA76 /* ASIDataCompressor.h */,
-				269A058113D8923F005DFA76 /* ASIDataCompressor.m */,
-				269A058213D8923F005DFA76 /* ASIDataDecompressor.h */,
-				269A058313D8923F005DFA76 /* ASIDataDecompressor.m */,
-				269A058413D8923F005DFA76 /* ASIDownloadCache.h */,
-				269A058513D8923F005DFA76 /* ASIDownloadCache.m */,
-				269A058613D8923F005DFA76 /* ASIFormDataRequest.h */,
-				269A058713D8923F005DFA76 /* ASIFormDataRequest.m */,
-				269A058813D8923F005DFA76 /* ASIHTTPRequest.h */,
-				269A058913D8923F005DFA76 /* ASIHTTPRequest.m */,
-				269A058A13D8923F005DFA76 /* ASIHTTPRequestConfig.h */,
-				269A058B13D8923F005DFA76 /* ASIHTTPRequestDelegate.h */,
-				269A058C13D8923F005DFA76 /* ASIInputStream.h */,
-				269A058D13D8923F005DFA76 /* ASIInputStream.m */,
-				269A058E13D8923F005DFA76 /* ASINetworkQueue.h */,
-				269A058F13D8923F005DFA76 /* ASINetworkQueue.m */,
-				269A059013D8923F005DFA76 /* ASIProgressDelegate.h */,
 				26EBE10D13C6386B0043D10F /* save.png */,
 				26EBE10B13C637520043D10F /* open.png */,
 				26EBE10513C636490043D10F /* add.png */,
@@ -353,13 +310,6 @@
 				266C35FA13BE6D36008C885E /* Version.m in Sources */,
 				263F436C13C361F1008AFD8C /* CVersionsTableView.m in Sources */,
 				26E30CA413C4FB5100268E91 /* MHumanReadableFileType.m in Sources */,
-				269A059113D8923F005DFA76 /* ASIDataCompressor.m in Sources */,
-				269A059213D8923F005DFA76 /* ASIDataDecompressor.m in Sources */,
-				269A059313D8923F005DFA76 /* ASIDownloadCache.m in Sources */,
-				269A059413D8923F005DFA76 /* ASIFormDataRequest.m in Sources */,
-				269A059513D8923F005DFA76 /* ASIHTTPRequest.m in Sources */,
-				269A059613D8923F005DFA76 /* ASIInputStream.m in Sources */,
-				269A059713D8923F005DFA76 /* ASINetworkQueue.m in Sources */,
 				269A05A513D8B010005DFA76 /* MInfoBoxView.m in Sources */,
 				269A05AA13D8B061005DFA76 /* NSBezierPath+MCAdditions.m in Sources */,
 				269A05AB13D8B061005DFA76 /* NSShadow+MCAdditions.m in Sources */,
@@ -401,7 +351,7 @@
 		26DD347013A5369300C1489D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -413,7 +363,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Median/Median-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Median;
 				SDKROOT = macosx;
 			};
@@ -422,7 +372,7 @@
 		26DD347113A5369300C1489D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -432,7 +382,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Median/Median-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Median;
 				SDKROOT = macosx;
 			};
@@ -442,7 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -454,7 +404,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Median/Median-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -465,7 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -476,7 +426,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Median/Median-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
