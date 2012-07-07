@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2632FFF813B274BF008A674D /* CTagsTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2632FFF713B274BF008A674D /* CTagsTokenField.m */; };
 		263F436C13C361F1008AFD8C /* CVersionsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 263F436B13C361F1008AFD8C /* CVersionsTableView.m */; };
+		26600E4115A7F8200023DEBD /* container-migration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26600E4015A7F8200023DEBD /* container-migration.plist */; };
 		266C35FA13BE6D36008C885E /* Version.m in Sources */ = {isa = PBXBuildFile; fileRef = 266C35F913BE6D36008C885E /* Version.m */; };
 		2672A44513AA455B0040B1F1 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 2672A44413AA455B0040B1F1 /* Tag.m */; };
 		2672A45513AA77600040B1F1 /* CGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2672A45413AA77600040B1F1 /* CGradientView.m */; };
@@ -49,6 +50,8 @@
 		2632FFF713B274BF008A674D /* CTagsTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTagsTokenField.m; sourceTree = "<group>"; };
 		263F436A13C361F1008AFD8C /* CVersionsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVersionsTableView.h; sourceTree = "<group>"; };
 		263F436B13C361F1008AFD8C /* CVersionsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVersionsTableView.m; sourceTree = "<group>"; };
+		26600E3F15A7E5220023DEBD /* Median.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Median.entitlements; sourceTree = "<group>"; };
+		26600E4015A7F8200023DEBD /* container-migration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "container-migration.plist"; path = "../container-migration.plist"; sourceTree = "<group>"; };
 		266C35F813BE6D36008C885E /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Version.h; sourceTree = "<group>"; };
 		266C35F913BE6D36008C885E /* Version.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Version.m; sourceTree = "<group>"; };
 		2672A44313AA455B0040B1F1 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 		26DD345B13A5369300C1489D /* Median */ = {
 			isa = PBXGroup;
 			children = (
+				26600E3F15A7E5220023DEBD /* Median.entitlements */,
 				26DF0F7B13D93B8B0095DDDC /* NSImage+QuickLook.h */,
 				26DF0F7C13D93B8B0095DDDC /* NSImage+QuickLook.m */,
 				269A05A613D8B061005DFA76 /* NSBezierPath+MCAdditions.h */,
@@ -219,6 +223,7 @@
 		26DD345C13A5369300C1489D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				26600E4015A7F8200023DEBD /* container-migration.plist */,
 				26DD345D13A5369300C1489D /* Median-Info.plist */,
 				26DD345E13A5369300C1489D /* InfoPlist.strings */,
 				26DD346113A5369300C1489D /* Median-Prefix.pch */,
@@ -253,6 +258,9 @@
 /* Begin PBXProject section */
 		26DD344813A5369300C1489D /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
 			buildConfigurationList = 26DD344B13A5369300C1489D /* Build configuration list for PBXProject "Median" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -285,6 +293,7 @@
 				26EBE10E13C6386B0043D10F /* save.png in Resources */,
 				2676B8E813D86995009A94D7 /* .gitignore in Resources */,
 				2676B8EA13D86A63009A94D7 /* .gitattributes in Resources */,
+				26600E4115A7F8200023DEBD /* container-migration.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -362,9 +372,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Median/Median-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Median;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -373,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -381,9 +393,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Median/Median-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Median;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -393,6 +406,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Median/Median.entitlements;
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -403,9 +417,10 @@
 				GCC_PREFIX_HEADER = "Median/Median-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Median/Median-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -416,6 +431,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Median/Median.entitlements;
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Joshua Martin";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -425,9 +441,10 @@
 				GCC_PREFIX_HEADER = "Median/Median-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Median/Median-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
