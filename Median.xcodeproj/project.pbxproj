@@ -50,8 +50,8 @@
 		2632FFF713B274BF008A674D /* CTagsTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTagsTokenField.m; sourceTree = "<group>"; };
 		263F436A13C361F1008AFD8C /* CVersionsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVersionsTableView.h; sourceTree = "<group>"; };
 		263F436B13C361F1008AFD8C /* CVersionsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVersionsTableView.m; sourceTree = "<group>"; };
-		26600E3F15A7E5220023DEBD /* Median.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Median.entitlements; sourceTree = "<group>"; };
 		26600E4015A7F8200023DEBD /* container-migration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "container-migration.plist"; path = "../container-migration.plist"; sourceTree = "<group>"; };
+		266594F216815778000BCD78 /* Median.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Median.entitlements; sourceTree = "<group>"; };
 		266C35F813BE6D36008C885E /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Version.h; sourceTree = "<group>"; };
 		266C35F913BE6D36008C885E /* Version.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Version.m; sourceTree = "<group>"; };
 		2672A44313AA455B0040B1F1 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		26DD345B13A5369300C1489D /* Median */ = {
 			isa = PBXGroup;
 			children = (
-				26600E3F15A7E5220023DEBD /* Median.entitlements */,
+				266594F216815778000BCD78 /* Median.entitlements */,
 				26DF0F7B13D93B8B0095DDDC /* NSImage+QuickLook.h */,
 				26DF0F7C13D93B8B0095DDDC /* NSImage+QuickLook.m */,
 				269A05A613D8B061005DFA76 /* NSBezierPath+MCAdditions.h */,
@@ -259,7 +259,7 @@
 		26DD344813A5369300C1489D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 26DD344B13A5369300C1489D /* Build configuration list for PBXProject "Median" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -362,7 +362,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "Developer ID Application: Joshua Martin";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -385,7 +385,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "Developer ID Application: Joshua Martin";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_VERSION = "";
@@ -394,7 +394,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Median/Median-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Median;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -407,7 +407,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Median/Median.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Joshua Martin";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -420,7 +421,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -432,7 +432,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Median/Median.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Joshua Martin";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -444,7 +445,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
