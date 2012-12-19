@@ -24,6 +24,7 @@
 		269A05AA13D8B061005DFA76 /* NSBezierPath+MCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A05A713D8B061005DFA76 /* NSBezierPath+MCAdditions.m */; };
 		269A05AB13D8B061005DFA76 /* NSShadow+MCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A05A913D8B061005DFA76 /* NSShadow+MCAdditions.m */; };
 		269A05AE13D8B25D005DFA76 /* MInfoBoxToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 269A05AD13D8B25D005DFA76 /* MInfoBoxToolbarItem.m */; };
+		269FB20D168176D600B97E4D /* median.icns in Resources */ = {isa = PBXBuildFile; fileRef = 269FB20C168176D600B97E4D /* median.icns */; };
 		26A284E313AF94A3000E1940 /* CTagsValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A284E213AF94A3000E1940 /* CTagsValueTransformer.m */; };
 		26A284F713B04C50000E1940 /* CStringWithUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A284F613B04C50000E1940 /* CStringWithUUID.m */; };
 		26C35B3513B39A1400E250ED /* CTagsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C35B3413B39A1400E250ED /* CTagsTableView.m */; };
@@ -76,6 +77,7 @@
 		269A05A913D8B061005DFA76 /* NSShadow+MCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSShadow+MCAdditions.m"; sourceTree = "<group>"; };
 		269A05AC13D8B25D005DFA76 /* MInfoBoxToolbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MInfoBoxToolbarItem.h; sourceTree = "<group>"; };
 		269A05AD13D8B25D005DFA76 /* MInfoBoxToolbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MInfoBoxToolbarItem.m; sourceTree = "<group>"; };
+		269FB20C168176D600B97E4D /* median.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = median.icns; sourceTree = "<group>"; };
 		26A284E113AF94A3000E1940 /* CTagsValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTagsValueTransformer.h; sourceTree = "<group>"; };
 		26A284E213AF94A3000E1940 /* CTagsValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTagsValueTransformer.m; sourceTree = "<group>"; };
 		26A284F513B04C4F000E1940 /* CStringWithUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CStringWithUUID.h; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		26DD344613A5369300C1489D = {
 			isa = PBXGroup;
 			children = (
+				269FB20C168176D600B97E4D /* median.icns */,
 				2676B8E913D86A63009A94D7 /* .gitattributes */,
 				2676B8E713D86995009A94D7 /* .gitignore */,
 				26DD345B13A5369300C1489D /* Median */,
@@ -294,6 +297,7 @@
 				2676B8E813D86995009A94D7 /* .gitignore in Resources */,
 				2676B8EA13D86A63009A94D7 /* .gitattributes in Resources */,
 				26600E4115A7F8200023DEBD /* container-migration.plist in Resources */,
+				269FB20D168176D600B97E4D /* median.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
