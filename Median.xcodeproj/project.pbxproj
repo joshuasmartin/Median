@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2632FFF813B274BF008A674D /* CTagsTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2632FFF713B274BF008A674D /* CTagsTokenField.m */; };
 		263F436C13C361F1008AFD8C /* CVersionsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 263F436B13C361F1008AFD8C /* CVersionsTableView.m */; };
+		2653A77A190A09F400747E76 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2653A779190A09F400747E76 /* LICENSE */; };
 		26600E4115A7F8200023DEBD /* container-migration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26600E4015A7F8200023DEBD /* container-migration.plist */; };
 		266C35FA13BE6D36008C885E /* Version.m in Sources */ = {isa = PBXBuildFile; fileRef = 266C35F913BE6D36008C885E /* Version.m */; };
 		2672A44513AA455B0040B1F1 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 2672A44413AA455B0040B1F1 /* Tag.m */; };
@@ -34,7 +35,6 @@
 		26DD346613A5369300C1489D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 26DD346413A5369300C1489D /* Credits.rtf */; };
 		26DD346913A5369300C1489D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD346813A5369300C1489D /* AppDelegate.m */; };
 		26DD346C13A5369300C1489D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26DD346A13A5369300C1489D /* MainMenu.xib */; };
-		26DF0F7D13D93B8B0095DDDC /* NSImage+QuickLook.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DF0F7C13D93B8B0095DDDC /* NSImage+QuickLook.m */; };
 		26DF0F7F13D93CC60095DDDC /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DF0F7E13D93CC60095DDDC /* QuickLook.framework */; };
 		26E30CA413C4FB5100268E91 /* MHumanReadableFileType.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E30CA313C4FB5100268E91 /* MHumanReadableFileType.m */; };
 		26EBE10713C636490043D10F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EBE10513C636490043D10F /* add.png */; };
@@ -51,6 +51,7 @@
 		2632FFF713B274BF008A674D /* CTagsTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTagsTokenField.m; sourceTree = "<group>"; };
 		263F436A13C361F1008AFD8C /* CVersionsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVersionsTableView.h; sourceTree = "<group>"; };
 		263F436B13C361F1008AFD8C /* CVersionsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVersionsTableView.m; sourceTree = "<group>"; };
+		2653A779190A09F400747E76 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26600E4015A7F8200023DEBD /* container-migration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "container-migration.plist"; path = "../container-migration.plist"; sourceTree = "<group>"; };
 		266594F216815778000BCD78 /* Median.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Median.entitlements; sourceTree = "<group>"; };
 		266C35F813BE6D36008C885E /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Version.h; sourceTree = "<group>"; };
@@ -97,8 +98,6 @@
 		26DD346713A5369300C1489D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26DD346813A5369300C1489D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		26DD346B13A5369300C1489D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		26DF0F7B13D93B8B0095DDDC /* NSImage+QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+QuickLook.h"; sourceTree = "<group>"; };
-		26DF0F7C13D93B8B0095DDDC /* NSImage+QuickLook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+QuickLook.m"; sourceTree = "<group>"; };
 		26DF0F7E13D93CC60095DDDC /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		26E30CA213C4FB5100268E91 /* MHumanReadableFileType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHumanReadableFileType.h; sourceTree = "<group>"; };
 		26E30CA313C4FB5100268E91 /* MHumanReadableFileType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHumanReadableFileType.m; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		26DD344613A5369300C1489D = {
 			isa = PBXGroup;
 			children = (
+				2653A779190A09F400747E76 /* LICENSE */,
 				269FB20C168176D600B97E4D /* median.icns */,
 				2676B8E913D86A63009A94D7 /* .gitattributes */,
 				2676B8E713D86995009A94D7 /* .gitignore */,
@@ -175,8 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				266594F216815778000BCD78 /* Median.entitlements */,
-				26DF0F7B13D93B8B0095DDDC /* NSImage+QuickLook.h */,
-				26DF0F7C13D93B8B0095DDDC /* NSImage+QuickLook.m */,
 				269A05A613D8B061005DFA76 /* NSBezierPath+MCAdditions.h */,
 				269A05A713D8B061005DFA76 /* NSBezierPath+MCAdditions.m */,
 				269A05A813D8B061005DFA76 /* NSShadow+MCAdditions.h */,
@@ -288,6 +286,7 @@
 			files = (
 				26DD346013A5369300C1489D /* InfoPlist.strings in Resources */,
 				26DD346613A5369300C1489D /* Credits.rtf in Resources */,
+				2653A77A190A09F400747E76 /* LICENSE in Resources */,
 				26DD346C13A5369300C1489D /* MainMenu.xib in Resources */,
 				26F9FB3A13BE38E0007B6510 /* logo.icns in Resources */,
 				26EBE10713C636490043D10F /* add.png in Resources */,
@@ -327,7 +326,6 @@
 				269A05AA13D8B061005DFA76 /* NSBezierPath+MCAdditions.m in Sources */,
 				269A05AB13D8B061005DFA76 /* NSShadow+MCAdditions.m in Sources */,
 				269A05AE13D8B25D005DFA76 /* MInfoBoxToolbarItem.m in Sources */,
-				26DF0F7D13D93B8B0095DDDC /* NSImage+QuickLook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
