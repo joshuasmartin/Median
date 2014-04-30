@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4D4CCF98-217F-434F-BADF-673CE186180C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Median</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1AC33304-7CA4-4292-8E57-D8F0A34E9E42</key>
+		<string>ssh://github.com/joshuasmartin/Median.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Median.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1AC33304-7CA4-4292-8E57-D8F0A34E9E42</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/joshuasmartin/Median.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1AC33304-7CA4-4292-8E57-D8F0A34E9E42</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1AC33304-7CA4-4292-8E57-D8F0A34E9E42</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Median</string>
+		</dict>
+	</array>
+</dict>
+</plist>
